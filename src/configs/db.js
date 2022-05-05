@@ -1,6 +1,6 @@
 
 const mongoose = require("mongoose");
 
-module.exports= ()=>{
-    return mongoose.connect("mongodb+srv://bmnaveen:bmnaveen@cluster0.ayxfh.mongodb.net/fitmeals-clone-backend")
+module.exports = () => {
+    return mongoose.connect("mongodb+srv://fitmeal:fitmeal001@cluster0.yr9xi.mongodb.net/myFirstDatabase")
 }
