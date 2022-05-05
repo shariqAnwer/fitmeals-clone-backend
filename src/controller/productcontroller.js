@@ -49,5 +49,9 @@ route.get("/product", async (req, res) => {
     let x = await product.find({}).lean().exec();
     return res.send(x)
 })
+route.get("/products", async (req, res) => {
 
+    let x = await product.find({}).lean().exec();
+    return res.send(x)
+})
 module.exports = route

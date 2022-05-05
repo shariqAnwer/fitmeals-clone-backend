@@ -8,6 +8,7 @@ const productcontroller = require("./controller/productcontroller.js");
 const app = express();
 
 app.use(express.json());
+const cors = require("cors");
 app.use(cors());
 
 console.log("Connected to backend")
