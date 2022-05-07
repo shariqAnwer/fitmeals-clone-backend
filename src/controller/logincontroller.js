@@ -1,6 +1,6 @@
 const express = require("express");
 const users = require("../model/regeistermodel");
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 
 const verifytoken = (token) => {
@@ -23,7 +23,7 @@ route.post("", async (req, res, next) => {
         }
         if (x) {
             console.log(x)
-            let confirm = bcrypt.compareSync(req.body.password, x.password);
+            let confirm = bcryptjs.compareSync(req.body.password, x.password);
             if (confirm) {
                 return res.send("login success")
             }
