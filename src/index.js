@@ -8,8 +8,8 @@ app.use(express.json())
 const cors = require("cors");
 
 const productcontroller = require("./controller/productcontroller.js");
-// const regeistercontroller = require("./controller/regeistercontroller.js");
-// const logincontroller = require("./controller/logincontroller.js")
+const regeistercontroller = require("./controller/regeistercontroller.js");
+const logincontroller = require("./controller/logincontroller.js")
 
 
 
