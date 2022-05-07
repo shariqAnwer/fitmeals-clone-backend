@@ -1,5 +1,6 @@
 
 const express = require("express");
+require("dotenv").config();
 
 const connect = require("./connect/mongoose")
 const app = express();
@@ -29,7 +30,11 @@ app.use("", productcontroller);
 
 
 
-app.listen(9083, () => {
-    connect()
-    console.log("listening on 9083 port")
-})
+app.listen(process.env.PORT || 5500, async function () {
+    try {
+        await connect();
+        console.log("app is listening on port 5500");
+    } catch (err) {
+        console.log(err.message);
+    }
+});
