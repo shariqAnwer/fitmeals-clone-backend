@@ -16,8 +16,8 @@ const productcontroller = require("./controller/productcontroller.js");
 
 
 app.use(cors());
-// app.use("/regeister", regeistercontroller);
-// app.use("/login", logincontroller)
+app.use("/regeister", regeistercontroller);
+app.use("/login", logincontroller)
 
 console.log("Connected to backend")
 
