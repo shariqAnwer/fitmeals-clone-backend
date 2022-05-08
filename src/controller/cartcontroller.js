@@ -61,7 +61,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.delete("/cart/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     console.log(req.params.id);
 
