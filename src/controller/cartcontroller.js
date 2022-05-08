@@ -47,7 +47,7 @@ router.post("", async (req, res) => {
 // });
 
 router.get("/:id", async (req, res) => {
-  console.log(req.body.id);
+  console.log(req.params.id);
   try {
    
 
