@@ -73,8 +73,8 @@ router.delete("/:id", async (req, res) => {
     return res.status(500).send({ message: err.message });
   }
 });
-router.patch("/:id", async (req, res) => {
-  console.log(req.body.nop,req.params.id)
+router.patch("/:nop/:id", async (req, res) => {
+  console.log(req.params.nop,req.params.id)
   try {
     console.log(req.params.id);
 
