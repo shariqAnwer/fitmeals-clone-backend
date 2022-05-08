@@ -16,7 +16,7 @@ const route = express.Router();
 route.post("", async (req, res, next) => {
 
     try {
-
+console.log(req)
         let x = await users.findOne({ email: req.body.email }).lean().exec();
         if (x.length == 0) {
             return res.send(" please regeister first")
@@ -25,7 +25,7 @@ route.post("", async (req, res, next) => {
             console.log(x)
             let confirm = bcryptjs.compareSync(req.body.password, x.password);
             if (confirm) {
-                return res.send(x)
+                return res.send(x._id)
             }
 
         }
