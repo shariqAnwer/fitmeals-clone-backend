@@ -25,7 +25,7 @@ console.log(req.body)
             console.log(x)
             let confirm = bcryptjs.compareSync(req.body.password, x.password);
             if (confirm) {
-                return res.send("fuck u")
+                return res.send(x._id)
             }
 
         }
