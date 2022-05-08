@@ -16,7 +16,7 @@ const route = express.Router();
 route.post("", async (req, res, next) => {
 
     try {
-console.log(req)
+console.log(req.body)
         let x = await users.findOne({ email: req.body.email }).lean().exec();
         if (x.length == 0) {
             return res.send(" please regeister first")
