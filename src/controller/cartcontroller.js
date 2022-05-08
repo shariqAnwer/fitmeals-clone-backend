@@ -46,11 +46,11 @@ router.post("", async (req, res) => {
 //   }
 // });
 
-router.get("", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     console.log(req);
 
-    const b = await cart.find({ userid: { $eq: req.params.tokenkey } })
+    const b = await cart.find({ userid: { $eq: req.params.id } })
       .lean()
       .exec();
     console.log(b);
