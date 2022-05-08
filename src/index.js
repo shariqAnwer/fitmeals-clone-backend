@@ -11,7 +11,7 @@ const productcontroller = require("./controller/productcontroller.js");
 const regeistercontroller = require("./controller/regeistercontroller.js");
 const logincontroller = require("./controller/logincontroller.js")
 
-
+const cartcontroller = require("./controller/cartcontroller.js")
 
 
 
@@ -24,7 +24,7 @@ console.log("Connected to backend")
 
 app.use("", productcontroller);
 
-
+app.use("/cart", productcontroller);
 
 
 
