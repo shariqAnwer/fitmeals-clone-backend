@@ -46,16 +46,17 @@ router.post("", async (req, res) => {
 //   }
 // });
 
-router.get("/:id", async (req, res) => {
+router.get("", async (req, res) => {
   try {
-    console.log(req.params.id);
+    console.log(req);
 
-    const b = await cart.find({ userid: { $eq: req.id } })
+    const b = await cart.find({ userid: { $eq: req.params.tokenkey } })
       .lean()
       .exec();
     console.log(b);
     return res.send(b);
   } catch (err) {
+  
     return res.status(500).send({ message: err.message });
   }
 });

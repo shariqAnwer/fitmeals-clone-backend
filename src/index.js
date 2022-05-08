@@ -24,7 +24,7 @@ console.log("Connected to backend")
 
 app.use("", productcontroller);
 
-app.use("/cart", cartcontroller);
+app.use("", cartcontroller);
 
 
 
