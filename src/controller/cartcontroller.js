@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) => {
   try {
     console.log(req);
 
-    const b = await cart.find({ userid: { $eq: req.params.id } })
+    const b = await cart.find({ userid: { $eq: req.body.id } })
       .lean()
       .exec();
     console.log(b);
