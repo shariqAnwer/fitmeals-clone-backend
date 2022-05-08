@@ -17,7 +17,7 @@ route.post("", async (req, res, next) => {
 
     try {
 
-        let x = await users.findOne({ email: req.body.username }).lean().exec();
+        let x = await users.findOne({ email: req.body.email }).lean().exec();
         if (x.length == 0) {
             return res.send(" please regeister first")
         }
