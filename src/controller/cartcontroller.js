@@ -1,6 +1,6 @@
 const express = require("express");
 
-const Cart = require("../models/cartmodel");
+const cart = require("../model/cartmodel");
 
 
 
@@ -16,7 +16,7 @@ router.post("", async (req, res) => {
     //    new: true,
     //  });
     
-    const cart = await Cart.create(
+    const b = await cart.create(
       
         req.body
       
@@ -25,7 +25,7 @@ router.post("", async (req, res) => {
       // }
     );
 
-    return res.send(cart);
+    return res.send(b);
   } catch (err) {
     console.log(err);
     return res.status(500).send({ message: err.message });
@@ -50,11 +50,11 @@ router.get("/:id", async (req, res) => {
   try {
     console.log(req.params.id);
 
-    const cart = await Cart.find({ userid: { $eq: req.id } })
+    const b = await cart.find({ userid: { $eq: req.id } })
       .lean()
       .exec();
-    console.log(cart);
-    return res.send(cart);
+    console.log(b);
+    return res.send(b);
   } catch (err) {
     return res.status(500).send({ message: err.message });
   }
@@ -64,9 +64,9 @@ router.delete("/:id", async (req, res) => {
   try {
     console.log(req.params.id);
 
-    const cart = await Cart.findByIdAndDelete(req.params.id).lean().exec();
-    console.log(cart);
-    return res.send(cart);
+    const b = await cart.findByIdAndDelete(req.params.id).lean().exec();
+    console.log(b);
+    return res.send(b);
   } catch (err) {
     return res.status(500).send({ message: err.message });
   }
