@@ -73,5 +73,18 @@ router.delete("/:id", async (req, res) => {
     return res.status(500).send({ message: err.message });
   }
 });
+router.patch("/:id", async (req, res) => {
+  try {
+    console.log(req.params.id);
 
+    const b = await cart.findByIdAndUpdate(req.params.id, { 
+      nop: req.params.nop,
+    }, 
+    {new: true}).lean().exec();
+    console.log(b);
+    return res.send(b);
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+});
 module.exports = router;
