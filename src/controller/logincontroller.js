@@ -25,7 +25,7 @@ route.post("", async (req, res, next) => {
             console.log(x)
             let confirm = bcryptjs.compareSync(req.body.password, x.password);
             if (confirm) {
-                return res.send("login success")
+                return res.send(x)
             }
 
         }
