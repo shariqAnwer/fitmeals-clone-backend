@@ -47,8 +47,9 @@ router.post("", async (req, res) => {
 // });
 
 router.get("/:id", async (req, res) => {
+  console.log(req.body.id);
   try {
-    console.log(req);
+   
 
     const b = await cart.find({ userid: { $eq: req.body.id } })
       .lean()
