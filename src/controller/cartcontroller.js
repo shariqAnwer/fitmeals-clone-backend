@@ -50,7 +50,7 @@ router.get("/:id", async (req, res) => {
   try {
     console.log(req);
 
-    const b = await cart.find({ userid: { $eq: req.body.id } })
+    const b = await cart.find({ userid: { $eq: req.params.id } })
       .lean()
       .exec();
     console.log(b);
@@ -61,7 +61,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/cart/:id", async (req, res) => {
   try {
     console.log(req.params.id);
 
