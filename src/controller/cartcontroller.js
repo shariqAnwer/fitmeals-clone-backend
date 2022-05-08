@@ -74,6 +74,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 router.patch("/:id", async (req, res) => {
+  console.log(req.params.nop,req.params.id)
   try {
     console.log(req.params.id);
 
